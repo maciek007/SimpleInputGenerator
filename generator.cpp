@@ -59,7 +59,6 @@ string createText(string t,list <Var> vs,bool generate=false)
 	{
 		v=vs.front();
 		vs.pop_front();
-		cout<<v.poz<<endl;
 		for(i;i<v.poz;i++)
 		{
 			s+=t[i];	
@@ -97,10 +96,10 @@ void addSequence(stringstream& s, string msg)
 	{
 		char c;
 		scanf("%c",&c);
-		if(c=='$')dolar++;
+		if(c=='`')dolar++;
 		else
 		{
-			for(int i=0;i<dolar;i++)s<<'$';
+			for(int i=0;i<dolar;i++)s<<'`';
 			dolar=0;	
 			s<<c;
 		}
@@ -140,11 +139,11 @@ void readTemplate(string s0,string& s1,list <Var> & vs)
 			}
 			pr=0;
 		}
-		else if(c=='$')dolar++;
+		else if(c=='`')dolar++;
 		else if(c=='%')pr=1;
 		else
 		{
-			for(int i=0;i<dolar;i++){s1+='$';j++;}
+			for(int i=0;i<dolar;i++){s1+='`';j++;}
 			dolar=0;
 			s1+=c;
 			j++;
@@ -161,7 +160,7 @@ void random(stringstream& s)
 	string temp;
 	system("cls");
 	cout<<"Write template : \n";
-	cout<<"||   $$$ to end, % and i,f,c to declare variable, %% to add %   ||\n";
+	cout<<"||   ``` to end, % and i,f,c to declare variable, %% to add %   ||\n";
 	addSequence(t,"");
 	list <Var> vars;
 	readTemplate(t.str(),temp,vars);
@@ -271,7 +270,7 @@ void menu()
 			case 3:
 				cin.ignore();
 				system("cls");
-				addSequence(s,"Add custom sequence (end with $$$) : \n");
+				addSequence(s,"Add custom sequence (end with ```) : \n");
 				system("cls");
 				cout<<"DONE!!! \n\n";
 				break;
