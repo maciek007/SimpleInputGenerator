@@ -252,7 +252,7 @@ void menu()
 			"[3] Add custom sequence \n"
 			"[8] View output \n"
 			"[9] Clear output \n"
-			"[0] Save output \n"
+			"[0] Save output to file \n"
 			"[404] Exit \n";
 		cin>>c;
 		if(!cin.good())
