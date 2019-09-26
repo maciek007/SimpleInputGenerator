@@ -5,6 +5,12 @@
 #include<cstdlib>
 #include<list>
 
+#ifdef _WIN32
+	#define CLEAN "cls"
+#else
+	#define CLEAN "clear"
+#endif
+
 using namespace std;
 
 struct Var
@@ -158,7 +164,7 @@ void random(stringstream& s)
 	p:
 	stringstream t;
 	string temp;
-	system("cls");
+	system(CLEAN);
 	cout<<"Write template : \n";
 	cout<<"||   ``` to end, % and i,f,c to declare variable, %% to add %   ||\n";
 	addSequence(t,"");
@@ -170,7 +176,7 @@ void random(stringstream& s)
 	int w;
 	do
 	{
-		system("cls");
+		system(CLEAN);
 		list<Var>::iterator ptr;
 		cout<<"Group: \n"<<msg<<"\n-----------------------------------------\n";
 		int j=0;
@@ -235,7 +241,7 @@ void menu()
 {
 
 	stringstream s;
-	system("cls");
+	system(CLEAN);
 	while(true)
 	{
 		
@@ -253,7 +259,7 @@ void menu()
 		{
 			cin.clear();
 			cin.ignore();
-			system("cls");
+			system(CLEAN);
 			cout<<"NOT TYPED A NUMBER!!!\n\n";
 			continue;
 		}
@@ -264,18 +270,18 @@ void menu()
 				break;
 			case 2:
 				random(s);
-				system("cls");
+				system(CLEAN);
 				cout<<"DONE!!! \n\n";
 				break;
 			case 3:
 				cin.ignore();
-				system("cls");
+				system(CLEAN);
 				addSequence(s,"Add custom sequence (end with ```) : \n");
-				system("cls");
+				system(CLEAN);
 				cout<<"DONE!!! \n\n";
 				break;
 			case 8:
-				system("cls");
+				system(CLEAN);
 				cout<<"----------Start file-----------\n"<<s.str()<<"\n-----------End file------------\n\n";
 				break;
 			case 9:
@@ -283,7 +289,7 @@ void menu()
 				char y;
 				cin>>y;
 				if(y=='y')s.str("");
-				system("cls");
+				system(CLEAN);
 				break;
 			case 404:
 				return;
@@ -296,12 +302,12 @@ void menu()
 				plik.open(name,ios::out);
 				plik<<s.str();
 				plik.close();
-				system("cls");
+				system(CLEAN);
 				cout<<"DONE!!! \n\n";
 				break;
 			}
 			default:
-				system("cls");
+				system(CLEAN);
 				cout<<"TYPED A WRONG NUMBER!!!\n\n";
 				break;
 		}
