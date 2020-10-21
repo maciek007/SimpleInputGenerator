@@ -159,6 +159,7 @@ void readTemplate(string s0,string& s1,list <Var> & vs)
 	
 
 }
+
 void random(stringstream& s)
 {
 	p:
@@ -185,7 +186,10 @@ void random(stringstream& s)
 			j++; cout<<j<<": "<<(*ptr).msg<<"  Range "<<(*ptr).down<<" : "<<(*ptr).up<<endl;
 		}
 		cout<<"-----------------------------------------\n"
-		"[0] Set amount of groups and generate \n[1] Change range \n[2] Change template\n[3] Exit \n";
+			"[0] Set amount of groups and generate \n"
+			"[1] Change range \n"
+			"[2] Change template\n"
+			"[3] Exit \n";
 		cin>>w;
 		
 		switch (w)
@@ -231,6 +235,7 @@ void random(stringstream& s)
 				goto p;
 				break;
 			default:
+				w=0;
 				break;
 		}
 		
