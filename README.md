@@ -8,3 +8,8 @@ Used to generate 'any' date to use in others programs
 ### **Upcoming** *TODO*
 * Add sequence of number like prime numbers
 * Add relations between numbers to generate
+* Add modifiers to generated numbers
+* Confirm to exit without safe
+* Random numbers from sum of ranges and/or an array of values
+* Add option to change arrangement of generated groups
+* Undo option
